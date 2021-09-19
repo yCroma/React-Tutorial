@@ -3,11 +3,13 @@ import Square from "./Square";
 
 const Board = ({ squares }) => {
   const renderSquare = (i) => {
-    return <Square value={squares[i]} />;
+    return <Square />;
   };
+  const status = "Next player: X";
 
   return (
     <>
+      <div className="status">{status}</div>
       <div className="board-now">
         {renderSquare(0)}
         {renderSquare(1)}
