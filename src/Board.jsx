@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Square from "./Square";
 
 const Board = ({ squares }) => {
+  const [squares, setSquare] = useState(Array(9).fill(null));
   const renderSquare = (i) => {
     return <Square index={i} />;
   };
