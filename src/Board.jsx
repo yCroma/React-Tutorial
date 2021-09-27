@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Square from "./Square";
 
-const Board = ({ squares }) => {
+const Board = () => {
   const [squares, setSquare] = useState(Array(9).fill(null));
   const handleClick = (i) => {
     squares[i] = "x";
