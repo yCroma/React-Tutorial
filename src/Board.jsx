@@ -3,8 +3,12 @@ import Square from "./Square";
 
 const Board = ({ squares }) => {
   const [squares, setSquare] = useState(Array(9).fill(null));
+  const handleClick = (i) => {
+    squares[i] = "x";
+    setSquare([...squares]);
+  };
   const renderSquare = (i) => {
-    return <Square index={i} />;
+    return <Square value={squares[i]} onClick={() => handleClick(i)} />;
   };
   const status = "Next player: X";
 
