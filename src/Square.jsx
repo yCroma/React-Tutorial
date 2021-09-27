@@ -1,6 +1,5 @@
 import React from "react";
 
-const Square = ({ index }) => {
 const Square = ({ value, onClick }) => {
   return (
     <button
