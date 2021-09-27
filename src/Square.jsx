@@ -1,6 +1,6 @@
 import React from "react";
 
-const Square = ({ value }) => {
+const Square = ({ index }) => {
   return (
     <button
       className="square"
@@ -8,7 +8,7 @@ const Square = ({ value }) => {
         alert("click");
       }}
     >
-      {value}
+      {index}
     </button>
   );
 };
