@@ -3,9 +3,11 @@ import Square from "./Square";
 
 const Board = () => {
   const [squares, setSquare] = useState(Array(9).fill(null));
+  const [xIsNext, setNext] = useState(true);
   const handleClick = (i) => {
-    squares[i] = "x";
+    squares[i] = xIsNext ? "X" : "O";
     setSquare([...squares]);
+    setNext(!xIsNext);
   };
   const renderSquare = (i) => {
     return <Square value={squares[i]} onClick={() => handleClick(i)} />;
