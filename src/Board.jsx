@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import Square from "./Square";
 
 const Board = () => {
+  const [winner, setWinner] = useState(null);
   const [squares, setSquare] = useState(Array(9).fill(null));
   const [xIsNext, setNext] = useState(true);
   const handleClick = (i) => {
     squares[i] = xIsNext ? "X" : "O";
+    setWinner(calculateWinner(squares));
+    if (winner) return;
     setSquare([...squares]);
     setNext(!xIsNext);
   };
