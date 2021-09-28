@@ -15,7 +15,12 @@ const Board = () => {
   const renderSquare = (i) => {
     return <Square value={squares[i]} onClick={() => handleClick(i)} />;
   };
-  const status = `Next player: ${xIsNext ? "X" : "0"}`;
+  let status;
+  if (winner) {
+    status = `Winner: ${winner}`;
+  } else {
+    status = `Next player: ${xIsNext ? "X" : "O"}`;
+  }
 
   return (
     <>
